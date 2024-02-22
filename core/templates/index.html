@@ -1,0 +1,44 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <center>
+      <h1>Hello World</h1>
+      <h2>TechStore</h2>
+      <img src="{% static 'images/logo.png' %}" alt="logo" width="25%" />
+      <br />
+      <table>
+        <thead>
+          <tr>
+            Product
+          </tr>
+          <tr>
+            Price
+          </tr>
+          <!-- <tr>
+          stock
+        </tr> -->
+        </thead>
+        <body>
+          {% for product in products %}
+          <tr>
+            <td>
+              <a href="{% url 'product' product.id %}">{{ product.name }}</a>
+            </td>
+            <td>{{ product.price }}</td>
+            <!-- <td>{{ product.stock }}</td> -->
+          </tr>
+          {% endfor %}
+        </body>
+      </table>
+      <button onclick="test();">test</button>
+    </center>
+    <script type="text/javascript" src="{% static 'js/button.js' %}"></script>
+  </body>
+</html>
